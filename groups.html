@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KHGN Inc. - Regional Community Networks</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background: #ffffff; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
+        .banner { background: #f4f4f4; border-bottom: 2px solid #ddd; padding: 25px; text-align: center; font-size: 26px; font-weight: bold; }
+        .container { max-width: 800px; margin: 40px auto; padding: 20px; box-sizing: border-box; width: 100%; }
+        .header-box { text-align: center; margin-bottom: 30px; }
+        h1 { font-size: 28px; color: #111; margin-bottom: 10px; }
+        p { font-size: 16px; line-height: 1.6; color: #555; }
+        
+        /* High-Velocity Pure Text Search Row */
+        .search-box { width: 100%; padding: 14px; font-size: 16px; border: 2px solid #333; border-radius: 4px; box-sizing: border-box; margin-bottom: 35px; background: #fff; font-weight: bold; }
+        
+        /* Lightweight Stacked Group Grid */
+        .group-stack { background: #ffffff; border: 1px dashed #ccc; padding: 10px; border-radius: 6px; margin-bottom: 30px; }
+        .group-row { padding: 20px; border-bottom: 1px dashed #eee; display: flex; justify-content: space-between; align-items: center; }
+        .group-row:last-child { border-bottom: none; }
+        .group-info { font-size: 15px; color: #444; text-align: left; }
+        .group-name { font-weight: bold; color: #222; font-size: 17px; margin-bottom: 4px; }
+        
+        .join-btn { padding: 10px 20px; background: #0056b3; color: #fff; text-decoration: none; border-radius: 4px; font-size: 13px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+        .join-btn:hover { background: #003d80; }
+        .back-home { display: inline-block; margin-top: 25px; color: #666; text-decoration: none; font-size: 14px; font-weight: bold; }
+        .back-home:hover { color: #111; }
+    </style>
+</head>
+<body>
+
+    <!-- Full Corporate Roof Header Banner -->
+    <div class="banner">
+         🚗 Kentucky History and Genealogy Network Inc.
+    </div>
+
+    <div class="container">
+        <div class="header-box">
+            <h1>Authorized Facebook Regional Groups</h1>
+            <p>Type your target location into the tracking row below to instantly isolate your specific county network.</p>
+        </div>
+
+        <!-- Pure Text Sifter Row -->
+        <input type="text" id="countySifter" class="search-box" onkeyup="siftCountyGroups()" placeholder="🔍 Type Kentucky County Name to Filter Groups Instantly...">
+
+        <!-- Lightweight Stacked Group Directory Container -->
+        <div class="group-stack" id="masterStack">
+            
+            <!-- Primary Network Hub -->
+            <div class="group-row" data-county="general master kentucky">
+                <div class="group-info">
+                    <div class="group-name">KHGN Inc. Primary Network Hub</div>
+                    <div>Statewide master community pasture for generalized announcements, research charts, and updates.</div>
+                </div>
+                <a href="https://facebook.com" target="_blank" class="join-btn">Open Hub</a>
+            </div>
+
+            <!-- Adair County -->
+            <div class="group-row" data-county="adair">
+                <div class="group-info">
+                    <div class="group-name">Adair County History &amp; Genealogy</div>
+                    <div>Authorized regional archive group for Adair County lineages, land records, and historical research.</div>
+                </div>
+                <a href="https://facebook.com" target="_blank" class="join-btn">Open Group</a>
+            </div>
+
+            <!-- Fayette County -->
+            <div class="group-row" data-county="fayette">
+                <div class="group-info">
+                    <div class="group-name">Fayette County History &amp; Genealogy</div>
+                    <div>Authorized regional archive group for Fayette County lineages, court book strings, and historical research.</div>
+                </div>
+                <a href="https://facebook.com" target="_blank" class="join-btn">Open Group</a>
+            </div>
+
+            <!-- Knox County -->
+            <div class="group-row" data-county="knox">
+                <div class="group-info">
+                    <div class="group-name">Knox County History &amp; Genealogy</div>
+                    <div>Authorized regional archive group for Knox County lineages, 1937 PHG map tracking, and historical research.</div>
+                </div>
+                <a href="https://facebook.com" target="_blank" class="join-btn">Open Group</a>
+            </div>
+
+            <!-- Lincoln County -->
+            <div class="group-row" data-county="lincoln">
+                <div class="group-info">
+                    <div class="group-name">Lincoln County History &amp; Genealogy</div>
+                    <div>Authorized regional archive group for Lincoln County lineages, original 1780 boundary logs, and historical research.</div>
+                </div>
+                <a href="https://facebook.com" target="_blank" class="join-btn">Open Group</a>
+            </div>
+
+            <!-- Madison County -->
+            <div class="group-row" data-county="madison">
+                <div class="group-info">
+                    <div class="group-name">Madison County History &amp; Genealogy</div>
+                    <div>Authorized regional archive group for Madison County lineages, pioneer station tracking, and cemetery stone inscriptions.</div>
+                </div>
+                <a href="https://facebook.com" target="_blank" class="join-btn">Open Group</a>
+            </div>
+
+        </div>
+
+        <p id="noMatchMessage" style="display: none; color: #721c1c; background: #f8d7da; border: 1px solid #f5c6cb; padding: 15px; border-radius: 4px; font-weight: bold;">
+            ⚠️ No matching county group found in active registry. For counties not listed, please use the main Information Request form on our homepage.
+        </p>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back-home">⬅️ Return to Main Platform Landing Room</a>
+        </div>
+    </div>
+
+    <script>
+        // Blistering Fast Pure Text Sifter Loop (Zero Server Weight)
+        function siftCountyGroups() {
+            const input = document.getElementById("countySifter").value.trim().toLowerCase();
+            const rows = document.getElementsByClassName("group-row");
+            const noMatch = document.getElementById("noMatchMessage");
+            let totalVisible = 0;
+
+            for (let i = 0; i < rows.length; i++) {
+                const countyTags = rows[i].getAttribute("data-county");
+                if (countyTags.includes(input)) {
+                    rows[i].style.display = "flex";
+                    totalVisible++;
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+
+            if (totalVisible === 0) {
+                noMatch.style.display = "block";
+            } else {
+                noMatch.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
