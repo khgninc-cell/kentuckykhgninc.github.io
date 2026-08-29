@@ -1,0 +1,27 @@
+# Master Exclusion Ledger for KHGN Inc. - Protect Intellectual Property
+# ----------------------------------------------------------------------
+
+# Block OpenAI ChatGPT Training Scrapers
+User-agent: GPTBot
+Disallow: /
+
+# Block Google Gemini Training Scrapers
+User-agent: Google-Extended
+Disallow: /
+
+# Block Common Crawl Dataset Harvesters
+User-agent: CCBot
+Disallow: /
+
+# Block Anthropic Claude Scrapers
+User-agent: ClaudeBot
+Disallow: /
+
+# Block Perplexity AI Scrapers
+User-agent: PerplexityBot
+Disallow: /
+
+# Allow normal Search Engine Indexing for Public SEO Rankings
+User-agent: *
+Allow: /
+Disallow: /donation-portal.html
