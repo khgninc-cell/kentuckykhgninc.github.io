@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KHGN Inc. - Unified Contribution & Tracking Ledger</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background: #ffffff; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
+        .banner { background: #f4f4f4; border-bottom: 2px solid #ddd; padding: 25px; text-align: center; font-size: 26px; font-weight: bold; }
+        .container { max-width: 800px; margin: 40px auto; padding: 20px; box-sizing: border-box; width: 100%; text-align: center; }
+        h1 { font-size: 28px; color: #111; margin-bottom: 15px; }
+        p { font-size: 16px; line-height: 1.6; color: #555; margin-bottom: 30px; text-align: left; }
+        .campaign-box { background: #fffcf5; border: 1px solid #ffeeba; border-left: 4px solid #ffc107; padding: 20px; border-radius: 6px; text-align: left; margin-bottom: 35px; }
+        .campaign-title { font-size: 18px; font-weight: bold; color: #b8860b; margin-top: 0; margin-bottom: 10px; }
+        .ledger-panel { background: #fafafa; border: 1px solid #eee; padding: 30px; border-radius: 8px; text-align: left; box-shadow: 0 4px 6px rgba(0,0,0,0.01); }
+        .route-badge { display: inline-block; padding: 6px 12px; background: #e8f5e9; color: #2e7d32; font-weight: bold; border-radius: 4px; font-family: monospace; font-size: 14px; margin-bottom: 15px; text-transform: uppercase; border: 1px solid #c8e6c9; }
+        .input-group { margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin-bottom: 8px; font-size: 14px; }
+        input[type="text"], select { width: 100%; padding: 12px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; font-size: 15px; }
+        .donate-btn { width: 100%; padding: 14px; background: #2e7d32; color: #fff; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
+        .donate-btn:hover { background: #1b5e20; }
+        .back-home { display: inline-block; margin-top: 30px; color: #666; text-decoration: none; font-size: 14px; font-weight: bold; }
+        .back-home:hover { color: #111; }
+    </style>
+</head>
+<body>
+    <div class="banner">🚗 Kentucky History and Genealogy Network Inc.</div>
+    <div class="container">
+        <h1>Unified Contribution Gateway</h1>
+        <div class="campaign-box">
+            <div class="campaign-title">☕ The Coffee Break Campaign</div>
+            <p style="margin:0; font-size:15px; color:#555; line-height:1.5;">By choosing to skip just one single cup of retail coffee this week and contributing that micro-amount to our network instead, you directly fund the storage slots, scanning systems, and server pipelines required to keep Kentucky's historical ledger running free for everyone. Small, collective acts out-produce massive corporate overhead every single day!</p>
+        </div>
+        <div class="ledger-panel">
+            <h3 style="margin-top:0; margin-bottom:5px; font-size:18px;">💳 Secure Transaction Terminal</h3>
+            <p style="font-size:13px; color:#666; margin-top:0; margin-bottom:15px;">Backstage single-tab parameters are automatically pulling routing targets from your link string.</p>
+            <div id="routingBadge" class="route-badge">Active Route: GENERAL_POOL</div>
+            <form onsubmit="alert('Transaction token initiated. Backstage routing paths verified against Treasurer ledger records.'); return false;">
+                <div class="input-group">
+                    <label>Contribution Amount ($ USD)</label>
+                    <select required>
+                        <option value="5">$5.00 — Pure Coffee Break Pledge</option>
+                        <option value="10">$10.00</option>
+                        <option value="25">$25.00</option>
+                        <option value="custom">Custom Support Amount</option>
+                    </select>
+                </div>
+                <div class="input-group"><label>Assigned Treasury Budget Allocation</label><input type="text" id="visibleAllocation" readonly style="background:#eee; font-weight:bold; color:#333;"></div>
+                <button type="submit" class="donate-btn">🔒 Execute Secure Shield Contribution</button>
+            </form>
+        </div>
+        <div style="text-align: center;"><a href="/index.html" class="back-home">⬅️ Return to Main Platform Landing Room</a></div>
+    </div>
+    <script>
+        function resolveDonationParameter() {
+            const urlParams = new URLSearchParams(window.location.search); const routeId = urlParams.get('id');
+            const badge = document.getElementById("routingBadge"); const allocationInput = document.getElementById("visibleAllocation");
+            if (routeId === "madison") {
+                badge.className = "route-badge"; badge.textContent = "Active Route: ACC-MADI-276"; allocationInput.value = "Madison County Local Preservation Fund Only";
+            } else if (routeId === "fayette") {
+                badge.className = "route-badge"; badge.textContent = "Active Route: ACC-FAYE-819"; allocationInput.value = "Fayette County Historical Records Fund Only";
+            } else if (routeId === "lincoln") {
+                badge.className = "route-badge"; badge.textContent = "Active Route: ACC-LINC-412"; allocationInput.value = "Lincoln County Archival Indexing Fund Only";
+            } else {
+                badge.className = "route-badge"; badge.style.background = "#efebe9"; badge.style.color = "#4e342e"; badge.style.borderColor = "#d7ccc8"; badge.textContent = "Active Route: ACC-GEN-001"; allocationInput.value = "KHGN Inc. Primary Corporate General Fund";
+            }
+        }
+        window.onload = resolveDonationParameter;
+    </script>
+</body>
+</html>
