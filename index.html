@@ -3,31 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KHGN Inc. - AI Canvas Command Room</title>
+    <title>Kentucky History and Genealogy Network Inc.</title>
     <style>
-        body { margin: 0; font-family: Arial, sans-serif; background: #ffffff; color: #333; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
-        .banner { background: #f4f4f4; border-bottom: 2px solid #ddd; padding: 20px; text-align: center; font-size: 24px; font-weight: bold; }
-        .search-row { padding: 15px; text-align: center; background: #eaeaea; display: flex; justify-content: center; gap: 10px; align-items: center; }
-        .search-box { width: 50%; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px; }
-        .search-btn { padding: 10px 20px; font-size: 16px; background: #333; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
-        .search-btn:hover { background: #555; }
-        .breadcrumbs { padding: 10px 20px; font-size: 14px; background: #f9f9f9; border-bottom: 1px solid #eee; }
-        .dashboard { display: flex; flex: 1; overflow: hidden; }
-        .column { flex: 1; padding: 25px; overflow-y: auto; box-sizing: border-box; display: flex; flex-direction: column; }
-        .column-1 { border-right: 2px solid #eee; background: #fff; }
-        .column-2 { background: #fafafa; }
-        h2 { border-bottom: 2px solid #333; padding-bottom: 5px; font-size: 18px; margin-top: 0; display: flex; justify-content: space-between; align-items: center; }
-        .input-area { width: 100%; height: 120px; padding: 10px; box-sizing: border-box; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; resize: none; margin-bottom: 15px; }
-        .action-btn { width: 100%; padding: 12px; background: #0056b3; color: #fff; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; }
-        .action-btn:hover { background: #004085; }
-        .log-box { flex: 1; background: #1e1e1e; color: #a9ffb7; font-family: monospace; padding: 15px; border-radius: 4px; overflow-y: auto; font-size: 13px; margin-top: 15px; line-height: 1.5; }
-        .text-feed { background: #fff; border: 1px solid #ddd; border-radius: 4px; padding: 20px; line-height: 1.6; font-size: 15px; min-height: 200px; white-space: pre-line; }
-        .badge { padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; text-transform: uppercase; }
-        .badge-success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
-        .badge-alert { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
-        .badge-neutral { background: #e2e3e5; color: #383d41; border: 1px solid #d6d8db; }
-        .portal-btn { display: inline-block; margin-top: 20px; padding: 12px 24px; background: #222; color: #fff; text-decoration: none; border-radius: 4px; font-weight: bold; text-align: center; }
-        .portal-btn:hover { background: #444; }
+        body { margin: 0; font-family: Arial, sans-serif; background: #ffffff; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
+        .banner { background: #f4f4f4; border-bottom: 2px solid #ddd; padding: 25px; text-align: center; font-size: 26px; font-weight: bold; }
+        .container { max-width: 800px; margin: 40px auto; padding: 20px; box-sizing: border-box; text-align: center; }
+        h1 { font-size: 28px; color: #111; margin-bottom: 20px; }
+        p { font-size: 16px; line-height: 1.6; color: #555; margin-bottom: 30px; }
+        .form-box { background: #fafafa; border: 1px solid #eee; padding: 30px; border-radius: 8px; text-align: left; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 14px; }
+        input[type="text"], input[type="email"] { width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; font-size: 15px; }
+        .submit-btn { width: 100%; padding: 12px; background: #333; color: #fff; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; text-transform: uppercase; margin-top: 10px; }
+        .submit-btn:hover { background: #555; }
     </style>
 </head>
 <body>
@@ -37,117 +25,17 @@
          🚗 Kentucky History and Genealogy Network Inc.
     </div>
 
-    <!-- The Single Keyword Search-to-Route Bar -->
-    <div class="search-row">
-        <input type="text" id="countySearch" class="search-box" placeholder="Enter Kentucky County Name to Route Directly...">
-        <button onclick="executeSearch()" class="search-btn">Search</button>
-    </div>
+    <!-- Main Public Information and Recruitment Area -->
+    <div class="container">
+        <h1>Welcome to Our Digital Network Center</h1>
+        <p>
+            Kentucky History and Genealogy Network Inc. (KHGN Inc.) is a legally registered non-profit organization dedicated to preserving, indexing, and validating regional historical data, land boundaries, and ancestral lineages across the Commonwealth. We are actively structuring our lightweight, high-performance serverless cloud infrastructure to better serve our researchers, volunteers, and the public interest.
+        </p>
 
-    <!-- Clean Breadcrumb Trail with Donation Portal ID -->
-    <div class="breadcrumbs">
-        Home &gt; Region &gt; County Project Donation Portal (?id=automated_ledger)
-    </div>
-
-    <!-- The 2-Column Full-Screen Sieve Interface Workspace -->
-    <div class="dashboard">
-        
-        <!-- Column 1: User Submission and Backend AI Sieve Engine Simulator -->
-        <div class="column column-1">
-            <h2>👥 Public Social Feed & AI Sieve Loop <span id="sieveStatus" class="badge badge-neutral">Idle</span></h2>
-            <p style="font-size: 14px; color: #666; margin-top: 0;">Submit historical text strings or records below to activate the adversarial multi-phase verification matrix.</p>
-            
-            <textarea id="userInput" class="input-area" placeholder="Type or paste historical data records, land boundaries, or family timelines to run through the sieve network..."></textarea>
-            <button onclick="processSieve()" class="action-btn">🚀 RUN DUAL-VENN SANDWICH PROCESSOR</button>
-            
-            <div id="consoleLog" class="log-box">System ready. Awaiting raw user input payload...</div>
-        </div>
-        
-        <!-- Column 2: The Target Dynamic Text Feed / Output Navigation View -->
-        <div class="column column-2">
-            <h2>🤖 Graded Gemini Sieve Content Feed <span id="feedScore" class="badge badge-neutral">0% Compliance</span></h2>
-            <p style="font-size: 14px; color: #666; margin-top: 0;">Displays verified, pure text history answers matching passed data tags. Zero link listings.</p>
-            
-            <div id="textResponseFeed" class="text-feed">Awaiting keyword search routing or successful left-column sieve authentication outputs...</div>
-            
-            <div style="text-align: center;">
-                <a href="https://github.io" class="portal-btn">🕹️ ENTER THE GRADED GAME PORTAL LAB</a>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Static Database Arrays for Dynamic Text-Tag Lookups (No Links)
-        const historicalRecordsDatabase = {
-            "madison": "MADISON COUNTY RECORD: Established August 1, 1785 from Lincoln County. Named for James Madison. Early pioneer tracking logs verified by automated ledger footprint. PII scan cleared. Copyright status: UNRESTRICTED PUBLIC DOMAIN.",
-            "fayette": "FAYETTE COUNTY RECORD: Established May 1, 1780 by the Virginia General Assembly. Historic court text strings parsed, indexed, and sanitized. Cross-examination status: 100% COMPLIANT. Terms of use: APPROVED FOR DISTRIBUTION.",
-            "lincoln": "LINCOLN COUNTY RECORD: One of the three original Kentucky counties established in 1780. Extensive land boundary survey charts parsed natively. Data-integrity loops checked against historical baseline grids."
-        };
-
-        // Standardized Text Formatting Helper for Console Room Logs
-        function appendLog(text, clean = false) {
-            const consoleBox = document.getElementById("consoleLog");
-            if (clean) consoleBox.innerHTML = "";
-            consoleBox.innerHTML += (consoleBox.innerHTML === "" ? "" : "<br>") + text;
-            consoleBox.scrollTop = consoleBox.scrollHeight;
-        }
-
-        // Search Bar Keyword Execution
-        function executeSearch() {
-            const query = document.getElementById("countySearch").value.trim().toLowerCase();
-            const feed = document.getElementById("textResponseFeed");
-            const scoreBadge = document.getElementById("feedScore");
-            
-            if (!query) {
-                feed.textContent = "Please enter a valid Kentucky county search string.";
-                return;
-            }
-
-            if (historicalRecordsDatabase[query]) {
-                scoreBadge.className = "badge badge-success";
-                scoreBadge.textContent = "100% Verified";
-                feed.textContent = historicalRecordsDatabase[query];
-            } else {
-                scoreBadge.className = "badge badge-alert";
-                scoreBadge.textContent = "No Record";
-                feed.textContent = `Search complete for keyword: "${query}". No direct text record match found inside the primary database ledger. Backstage server paths standing down.`;
-            }
-        }
-
-        // The Automated Dual-Venn Sandwich Machine Loop Simulation
-        function processSieve() {
-            const rawInput = document.getElementById("userInput").value.trim();
-            const statusBadge = document.getElementById("sieveStatus");
-            const scoreBadge = document.getElementById("feedScore");
-            const feedWindow = document.getElementById("textResponseFeed");
-            
-            if (!rawInput) {
-                alert("Please enter a text string payload to run through the adversarial sieve system.");
-                return;
-            }
-
-            statusBadge.className = "badge badge-neutral";
-            statusBadge.textContent = "Processing";
-            appendLog("Initializing Adversarial Language NLP Token Extraction...", true);
-
-            // Step 1 & 2: Independent Scanning Node Extraction Simulation
-            setTimeout(() => {
-                appendLog("» Running Phase 1 Scans...");
-                appendLog("Node A (Honest Brother): Parsing tokens for structural alignment rules.");
-                appendLog("Node B (Untruthful Node): Checking for hallucination drift, PII leaks, and Copyright blocks.");
-                
-                // Calculate dynamic score logic parameters based on keyword contents
-                let initialScore = 95; // Default pristine track score
-                let logWarnings = [];
-
-                if (rawInput.toLowerCase().includes("http") || rawInput.toLowerCase().includes(".com")) {
-                    initialScore -= 15;
-                    logWarnings.push("WARNING: Third-party website URL link block detected.");
-                }
-                if (rawInput.toLowerCase().includes("social security") || rawInput.toLowerCase().includes("phone:")) {
-                    initialScore -= 20;
-                    logWarnings.push("CRITICAL ALERT: Protected Personally Identifiable Information (PII) pattern matched.");
-                }
-
-                // Step 3: VENN DIAGRAM PHASE 1 (The Pre-Filter)
-                setTimeout(() => {
-                    appendLog("<br>🔥 EXECUTING VENN DIAGRAM PHASE 1 (The Pre-Filter Set-Theory Sieve)...");
+        <!-- Generic Public Intake Form (Zero AI Backstage Hooks Visible) -->
+        <div class="form-box">
+            <h3 style="margin-top:0; margin-bottom: 20px; border-bottom: 2px solid #333; padding-bottom: 5px;">👥 Volunteer Registration & Information Inquiry</h3>
+            <form onsubmit="alert('Thank you for contacting KHGN Inc. Our administrative desk will review your inquiry.'); return false;">
+                <div class="form-group">
+                    <label>Full Legal Name</label>
+                    <input type="text" placeholder="Enter your full name..." required>
