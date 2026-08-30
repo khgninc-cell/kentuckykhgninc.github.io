@@ -3,63 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kentucky History and Genealogy Network Inc.</title>
+    <title>KHGN Inc. - District Community Networks</title>
     <style>
         body { margin: 0; font-family: Arial, sans-serif; background: #ffffff; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
         .banner { background: #f4f4f4; border-bottom: 2px solid #ddd; padding: 25px; text-align: center; font-size: 26px; font-weight: bold; }
-        .container { max-width: 800px; margin: 40px auto; padding: 20px; box-sizing: border-box; text-align: center; }
-        h1 { font-size: 28px; color: #111; margin-bottom: 20px; }
-        .intro-text { font-size: 16px; line-height: 1.6; color: #555; margin-bottom: 30px; text-align: left; }
-        .community-box { background: #f0f7ff; border-left: 4px solid #0056b3; padding: 20px; border-radius: 0 6px 6px 0; margin-bottom: 40px; text-align: left; font-size: 15px; line-height: 1.5; }
-        .nav-link { font-weight: bold; color: #0056b3; text-decoration: none; border-bottom: 1px solid #0056b3; padding-bottom: 1px; }
-        .nav-link:hover { color: #003d80; border-bottom-color: #003d80; }
-        .form-box { background: #fafafa; border: 1px solid #eee; padding: 30px; border-radius: 8px; text-align: left; }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 14px; }
-        input[type="text"], input[type="email"] { width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; font-size: 15px; }
-        .submit-btn { width: 100%; padding: 12px; background: #333; color: #fff; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; text-transform: uppercase; margin-top: 10px; }
-        .submit-btn:hover { background: #555; }
+        .container { max-width: 850px; margin: 40px auto; padding: 20px; box-sizing: border-box; width: 100%; }
+        .header-box { text-align: center; margin-bottom: 30px; }
+        h1 { font-size: 28px; color: #111; margin-bottom: 10px; }
+        p { font-size: 16px; line-height: 1.6; color: #555; }
+        .search-box { width: 100%; padding: 14px; font-size: 16px; border: 2px solid #333; border-radius: 4px; box-sizing: border-box; margin-bottom: 35px; background: #fff; font-weight: bold; }
+        .group-stack { background: #ffffff; border: 1px dashed #ccc; padding: 10px; border-radius: 6px; margin-bottom: 30px; }
+        .group-row { padding: 20px; border-bottom: 1px dashed #eee; display: flex; justify-content: space-between; align-items: center; }
+        .group-row:last-child { border-bottom: none; }
+        .group-info { font-size: 15px; color: #444; text-align: left; padding-right: 15px; }
+        .group-name { font-weight: bold; color: #222; font-size: 17px; margin-bottom: 4px; }
+        .badge-district { display: inline-block; font-size: 11px; background: #e2e3e5; color: #383d41; padding: 3px 6px; border-radius: 3px; font-weight: bold; margin-bottom: 6px; text-transform: uppercase; }
+        .badge-county { display: inline-block; font-size: 11px; background: #cce5ff; color: #004085; padding: 3px 6px; border-radius: 3px; font-weight: bold; margin-bottom: 6px; text-transform: uppercase; }
+        .badge-state { display: inline-block; font-size: 11px; background: #d4edda; color: #155724; padding: 3px 6px; border-radius: 3px; font-weight: bold; margin-bottom: 6px; text-transform: uppercase; }
+        .join-btn { padding: 10px 20px; background: #0056b3; color: #fff; text-decoration: none; border-radius: 4px; font-size: 13px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+        .join-btn:hover { background: #003d80; }
+        .back-home { display: inline-block; margin-top: 25px; color: #666; text-decoration: none; font-size: 14px; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <!-- Full Corporate Roof Header Banner -->
-    <div class="banner">
-         🚗 Kentucky History and Genealogy Network Inc.
-    </div>
+    <div class="banner">🚗 Kentucky History and Genealogy Network Inc.</div>
 
     <div class="container">
-        <h1>Welcome to Our Digital Network Center</h1>
-        
-        <p class="intro-text">
-            Kentucky History and Genealogy Network Inc. (KHGN Inc.) is a legally registered 501(c)(3) non-profit organization dedicated to preserving, indexing, and validating regional historical data, land boundaries, and ancestral lineages across the Commonwealth. Use our public access links below to explore our regional networks and community archives.
-        </p>
-
-        <!-- New High-Utility Community Group Callout Row (Line 34 Expansion) -->
-        <div class="community-box">
-            💬 <strong>Active Research Directory:</strong> Join our massive interactive discussions, query other historical researchers, and filter our regional pastures natively inside our verified <a href="groups.html" class="nav-link">Facebook Groups Directory Hub</a>.
+        <div class="header-box">
+            <h1>Authorized Facebook District Groups</h1>
+            <p>Type your target location or historical keyword below to instantly isolate individual county and neighboring district pastures.</p>
         </div>
 
-        <!-- Generic Public Intake Form -->
-        <div class="form-box">
-            <h3 style="margin-top:0; margin-bottom: 20px; border-bottom: 2px solid #333; padding-bottom: 5px;">👥 General Information Request Loop</h3>
-            <form onsubmit="alert('Thank you for contacting KHGN Inc. Our administrative desk will review your inquiry.'); return false;">
-                <div class="form-group">
-                    <label>Full Legal Name</label>
-                    <input type="text" placeholder="Enter your full name..." required>
-                </div>
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" placeholder="Enter your contact email..." required>
-                </div>
-                <div class="form-group">
-                    <label>Kentucky County of Interest</label>
-                    <input type="text" placeholder="e.g., Madison, Fayette, Lincoln..." required>
-                </div>
-                <button type="submit" class="submit-btn">Submit Information Request</button>
-            </form>
-        </div>
-    </div>
+        <!-- Pure Text Sifter Row -->
+        <input type="text" id="countySifter" class="search-box" onkeyup="siftCountyGroups()" placeholder="🔍 Type County Name or Keyword (e.g., Knox, Madison, Coal, Cemeteries) to Filter Instantly...">
 
-</body>
-</html>
+        <div class="group-stack" id="masterStack">
+            
+            <!-- ====== SECTION 1: THE 6 AUTHORIZED LIVE STATEWIDE HUBS ====== -->
+            <div class="group-row" data-county="general master kentucky history genealogy public network hub">
+                <div class="group-info"><div class="badge-state">Statewide Hub</div><div class="group-name">Kentucky History and Genealogy Network Inc. (Public Group)</div><div>Primary open corporate hub pasture for generalized announcements, public research posts, and network updates.</div></div>
+                <a href="https://facebook.com" target="_blank" class="join-btn">Open Hub</a>
+            </div>
+            <div class="group-row" data-county="coal mining heritage appalachia mountains industry workers labor ancestors">
+                <div class="group-info"><div class="badge-state">Thematic Hub</div><div class="group-name">Our Coal Mining Heritage, Appalachia and Beyond</div><div>Specialized history track documenting regional Appalachian coal mining infrastructure, labor ledgers, and mining community lineages.</div></div>
+                <a href="https://facebook.com" target="_blank" class="join-btn">Open Group</a>
+            </div>
+            <div class="group-row" data-county="kentucky genealogy items sale marketplace buy sell khgn">
+                <div class="group-info"><div class="badge-state">Statewide Hub</div><div class="group-name">Ky Genealogy Items For Sale KHGN INC</div><div>Official statewide marketplace pasture for buying, selling, or trading historical books, lineage records, and heirlooms.</div></div>
+                <a href="https://facebook.com" target="_blank" class="join-btn">Open Group</a>
+            </div>
+            <div class="group-row" data-county="kentucky genealogy records transcripts court wills census">
+                <div class="group-info"><div class="badge-state">Statewide Hub</div><div class="group-name">Kentucky Genealogy Records</div><div>Dedicated repository feed for posting verified family lineage logs, original transcripts, and court book strings.</div></div>
+                <a href="https://facebook.com" target="_blank" class="join-btn">Open Group</a>
+            </div>
+            <div class="group-row" data-county="kentucky beauty pictures photography landscape scenery nature images">
+                <div class="group-info"><div class="badge-state">Statewide Hub</div><div class="group-name">Kentucky Beauty Through Pictures</div><div>Statewide cultural showcase pasture for regional landscape photography, historical structures, and Commonwealth scenery.</div></div>
+                <a href="https://facebook.com" target="_blank" class="join-btn">Open Group</a>
+            </div>
+            <div class="group-row" data-county="cemeteries kentucky stones markers tombstones preservation monuments">
+                <div class="group-info"><div class="badge-state">Thematic Hub</div><div class="group-name">The Cemeteries of Kentucky</div><div>Statewide preservation track focusing strictly on cemetery logging, historical stone inscriptions, and protective field mapping guidelines.</div></div>
+                <a href="https://facebook.com" target="_blank" class="join-btn">Open Group</a>
+            </div>
+
+            <!-- ====== SECTION 2: THE 28 AUTHORIZED REGIONAL DISTRICT PASTURES ====== -->
+            <div class="group-row" data-county="christian logan todd border district"><div class="group-info"><div class="badge-district">District Pasture</div><div class="group-name">Christian, Logan &amp; Todd County History &amp; Genealogy</div><div>Unified regional border network tracking intersecting family lineages across Christian, Logan, and Todd counties.</div></div><a href="https://facebook.com" target="_blank" class="join-btn">Open District</a></div>
+            <div class="group-row" data-county="anderson marion washington border district"><div class="group-info"><div class="badge-district">District Pasture</div><div class="group-name">Anderson, Marion &amp; Washington County History &amp; Genealogy</div><div>Unified regional border network tracking intersecting family lineages across Anderson, Marion, and Washington counties.</div></div><a href="https://facebook.com" target="_blank" class="join-btn">Open District</a></div>
+            <div class="group-row" data-county="barren edmonson monroe border district"><div class="group-info"><div class="badge-district">District Pasture</div><div class="group-name">Barren, Edmonson &amp; Monroe County History &amp; Genealogy</div><div>Unified regional border network tracking intersecting family lineages across Barren, Edmonson, and Monroe counties.</div></div><a href="https://facebook.com" target="_blank" class="join-btn">Open District</a></div>
+            <div class="group-row" data-county="caldwell crittenden livingston border district"><div class="group-info"><div class="badge-district">District Pasture</div><div class="group-name">Caldwell, Crittenden &amp; Livingston County History &amp; Genealogy</div><div>Unified regional border network tracking intersecting family lineages across Caldwell, Crittenden, and Livingston counties.</div></div><a href="https://facebook.com" target="_blank" class="join-btn">Open District</a></div>
+            <div class="group-row" data-county="breckinridge hancock meade border district"><div class="group-info"><div class="badge-district">District Pasture</div><div class="group-name">Breckinridge, Hancock &amp; Meade County History &amp; Genealogy</div><div>Unified regional border network tracking intersecting family lineages across Breckinridge, Hancock, and Meade counties.</div></div><a href="https://facebook.com" target="_blank" class="join-btn">Open District</a></div>
+            <div class="group-row" data-county="bourbon montgomery nicholas border district"><div class="group-info"><div class="badge-district">District Pasture</div><div class="group-name">Bourbon, Montgomery &amp; Nicholas County History &amp; Genealogy</div><div>Unified regional border network tracking intersecting family lineages across Bourbon, Montgomery, and Nicholas counties.</div></div><a href="https://facebook.com" target="_blank" class="join-btn">Open District</a></div>
