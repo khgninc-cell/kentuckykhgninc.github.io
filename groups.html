@@ -5,15 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KHGN Inc. - Regional Community Networks</title>
     <style>
-        /* Primitive Historical Color Palette */
         body { margin: 0; font-family: Arial, sans-serif; background: #ffffff; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
         .banner { background: #f4f4f4; border-bottom: 2px solid #ddd; padding: 25px; text-align: center; font-size: 26px; font-weight: bold; }
         .container { max-width: 850px; margin: 40px auto; padding: 20px; box-sizing: border-box; width: 100%; text-align: center; }
-        
-        /* Model T Frame Optimization */
         .image-frame { max-width: 500px; margin: 0 auto 25px auto; border: 1px dashed #ccc; padding: 10px; border-radius: 6px; background: #fafafa; }
         .model-t-img { width: 100%; height: auto; display: block; border-radius: 4px; }
-        
         h1 { font-size: 28px; color: #111; margin-bottom: 10px; }
         p { font-size: 16px; line-height: 1.6; color: #555; }
         .search-box { width: 100%; padding: 14px; font-size: 16px; border: 2px solid #333; border-radius: 4px; box-sizing: border-box; margin-bottom: 35px; background: #fff; font-weight: bold; }
@@ -28,19 +24,13 @@
         .join-btn { padding: 10px 20px; background: #0056b3; color: #fff; text-decoration: none; border-radius: 4px; font-size: 13px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
         .join-btn:hover { background: #003d80; }
         .back-home { display: inline-block; margin-top: 25px; color: #666; text-decoration: none; font-size: 14px; font-weight: bold; }
-        .back-home:hover { color: #111; }
     </style>
 </head>
 <body>
 
-    <!-- Full Corporate Roof Header Banner -->
-    <div class="banner">
-         🚗 Kentucky History and Genealogy Network Inc.
-    </div>
+    <div class="banner">🚗 Kentucky History and Genealogy Network Inc.</div>
 
     <div class="container">
-        
-        <!-- Native Model T Image Injection -->
         <div class="image-frame">
             <img src="model-t.jpg" alt="Vintage Model T Automobile" class="model-t-img" onerror="this.parentElement.style.display='none';">
         </div>
@@ -50,12 +40,11 @@
             <p>Type your target location or historical keyword below to instantly isolate individual county and neighboring district pastures.</p>
         </div>
 
-        <!-- Pure Text Sifter Row -->
-        <input type="text" id="countySifter" class="search-box" onkeyup="siftCountyGroups()" placeholder="🔍 Type County Name or Keyword (e.g., Knox, Madison, Coal, Cemeteries) to Filter Instantly...">
+        <input type="text" id="countySifter" class="search-box" onkeyup="siftCountyGroups()" placeholder="🔍 Type County Name or Keyword to Filter Instantly...">
 
         <div class="group-stack" id="masterStack">
             
-            <!-- ====== SECTION 1: THE AUTHORIZED LIVE STATEWIDE HUBS ====== -->
+            <!-- ====== STATEWIDE HUBS (PASTES SECURELY) ====== -->
             <div class="group-row" data-county="general master kentucky history genealogy public network hub">
                 <div class="group-info"><div class="badge-state">Statewide Hub</div><div class="group-name">Kentucky History and Genealogy Network Inc. (Public Group)</div><div>Primary open corporate hub pasture for generalized announcements, public research posts, and network updates.</div></div>
                 <a href="https://facebook.com" target="_blank" class="join-btn">Open Hub</a>
@@ -81,8 +70,36 @@
                 <a href="https://facebook.com" target="_blank" class="join-btn">Open Group</a>
             </div>
 
-            <!-- ====== SECTION 2: THE 28 REGIONAL DISTRICT PASTURES ====== -->
-            <div class="group-row" data-county="christian logan todd border district"><div class="group-info"><div class="badge-district">District Pasture</div><div class="group-name">Christian, Logan &amp; Todd County History &amp; Genealogy</div><div>Unified regional border network tracking intersecting family lineages across Christian, Logan, and Todd counties.</div></div><a href="https://facebook.com" target="_blank" class="join-btn">Open District</a></div>
-            <div class="group-row" data-county="anderson marion washington border district"><div class="group-info"><div class="badge-district">District Pasture</div><div class="group-name">Anderson, Marion &amp; Washington County History &amp; Genealogy</div><div>Unified regional border network tracking intersecting family lineages across Anderson, Marion, and Washington counties.</div></div><a href="https://facebook.com" target="_blank" class="join-btn">Open District</a></div>
-            <div class="group-row" data-county="barren edmonson monroe border district"><div class="group-info"><div class="badge-district">District Pasture</div><div class="group-name">Barren, Edmonson &amp; Monroe County History &amp; Genealogy</div><div>Unified regional border network tracking intersecting family lineages across Barren, Edmonson, and Monroe counties.</div></div><a href="https://facebook.com" target="_blank" class="join-btn">Open District</a></div>
-            <div class="group-row" data-county="caldwell crittenden livingston border district"><div class="group-info"><div class="badge-district">District Pasture</div><div class="group-name">Caldwell, Crittenden &amp; Livingston County History &amp; Genealogy</div><div>Unified regional border network tracking intersecting family lineages across Caldwell, Crittenden, and Livingston counties.</div></div><a href="https://facebook.com" target="_blank" class="join-btn">Open District</a></div>
+            <!-- REGIONAL ENTRIES WILL SLIDE DIRECTLY IN HERE -->
+
+        </div>
+
+        <p id="noMatchMessage" style="display: none; color: #721c1c; background: #f8d7da; border: 1px solid #f5c6cb; padding: 15px; border-radius: 4px; font-weight: bold;">
+            ⚠️ No matching location found in active network registry.
+        </p>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back-home">⬅️ Return to Main Platform Landing Room</a>
+        </div>
+    </div>
+
+    <script>
+        function siftCountyGroups() {
+            const input = document.getElementById("countySifter").value.trim().toLowerCase();
+            const rows = document.getElementsByClassName("group-row");
+            const noMatch = document.getElementById("noMatchMessage");
+            let totalVisible = 0;
+            for (let i = 0; i < rows.length; i++) {
+                const countyTags = rows[i].getAttribute("data-county");
+                if (countyTags.includes(input)) {
+                    rows[i].style.display = "flex";
+                    totalVisible++;
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+            noMatch.style.display = totalVisible === 0 ? "block" : "none";
+        }
+    </script>
+</body>
+</html>
